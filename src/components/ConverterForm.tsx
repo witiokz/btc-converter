@@ -28,9 +28,9 @@ const ConverterForm = () => {
       }
     }
 
-    //  setInterval(async () => {
-    fetchData();
-    //}, 60000);
+    setInterval(async () => {
+      fetchData();
+    }, 60000);
   }, []);
 
   const onCurrencyRemove = (currencyCode: string) => {
@@ -61,7 +61,6 @@ const ConverterForm = () => {
               {currencyPriceData?.currencies &&
                 currencies.map((currency: string | Currency) => {
                   const curencyItem = currencyPriceData.currencies.find((i) => i.code === currency) ?? {};
-                  console.log("curencyItem", curencyItem);
                   return (
                     <CurrencyInput
                       key={currency}
